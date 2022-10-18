@@ -9,6 +9,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="flight" doc:id="7a1a71ff-cfb7-4139-9ece-fb1223afeaf4" >
 		<http:listener doc:name="/flights" doc:id="044eb4d2-7036-4a44-91b7-40de5453ab10" config-ref="HTTP_Listener_config" path="/flights"/>
-		<set-payload value='#[output json --- "Flight Data"]' doc:name="Set Payload" doc:id="0c53da6c-6df2-42eb-9309-d915668b98cd" />
+		<set-payload value='#[output json --- message ++ {"Flight Data": "Flight Info"}]' doc:name="Set Payload" doc:id="0c53da6c-6df2-42eb-9309-d915668b98cd" />
 	</flow>
 </mule>
